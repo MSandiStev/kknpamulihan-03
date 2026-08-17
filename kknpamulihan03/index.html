@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KKN Desa Pamulihan 03 — Tautan</title>
+    <link rel="icon" type="image/jpeg" href="img/logokkn.jpeg" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+      :root {
+        --opsional-deep: #3e5a7c;
+        --opsional: #5b7ea6;
+        --dasar: #b8d4f7;
+        --pendukung: #d2e39a;
+        --kabut: #eff3f0;
+        --kertas: #fcfdfb;
+        --teks: #2b3b44;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        background: radial-gradient(circle at 15% 0%, rgba(210, 227, 154, 0.35), transparent 45%), radial-gradient(circle at 85% 100%, rgba(184, 212, 247, 0.45), transparent 50%), var(--kabut);
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: var(--teks);
+        display: flex;
+        justify-content: center;
+        padding: 48px 20px 64px;
+      }
+
+      .field-lines {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(100deg, rgba(91, 126, 166, 0.06) 0px, rgba(91, 126, 166, 0.06) 2px, transparent 2px, transparent 34px);
+      }
+
+      .wrap {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 430px;
+      }
+
+      .banner {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0 12px 26px -12px rgba(62, 90, 124, 0.4);
+      }
+
+      .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .banner::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(62, 90, 124, 0.15) 0%, rgba(43, 59, 68, 0.55) 100%);
+      }
+
+      .badge-row {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 22px;
+      }
+
+      .badge {
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--opsional-deep);
+        background: rgba(91, 126, 166, 0.1);
+        border: 1px solid rgba(91, 126, 166, 0.3);
+        padding: 6px 14px;
+        border-radius: 100px;
+        font-weight: 600;
+      }
+
+      .avatar {
+        width: 88px;
+        height: 88px;
+        margin: 0 auto 18px;
+        border-radius: 50%;
+        background: linear-gradient(155deg, var(--opsional) 0%, var(--opsional-deep) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fraunces", serif;
+        font-size: 34px;
+        font-weight: 600;
+        color: var(--kertas);
+        box-shadow: 0 10px 24px -8px rgba(62, 90, 124, 0.45);
+        border: 3px solid var(--kertas);
+        overflow: hidden;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .icon img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 28px;
+        text-align: center;
+        color: var(--opsional-deep);
+        line-height: 1.25;
+      }
+
+      .sub {
+        text-align: center;
+        font-size: 14px;
+        color: #5f7488;
+        margin-top: 8px;
+        margin-bottom: 36px;
+      }
+
+      .group-label {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #7690a3;
+        font-weight: 700;
+        margin: 28px 4px 10px;
+      }
+      .group-label:first-of-type {
+        margin-top: 0;
+      }
+
+      .link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--kertas);
+        border: 1.5px solid rgba(91, 126, 166, 0.18);
+        border-radius: 16px;
+        padding: 15px 18px;
+        margin-bottom: 12px;
+        text-decoration: none;
+        color: var(--teks);
+        transition:
+          transform 0.15s ease,
+          border-color 0.15s ease,
+          box-shadow 0.15s ease;
+        box-shadow: 0 1px 0 rgba(62, 90, 124, 0.04);
+      }
+
+      .link:hover {
+        transform: translateY(-2px);
+        border-color: var(--pendukung);
+        box-shadow: 0 10px 20px -12px rgba(62, 90, 124, 0.3);
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        border-radius: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      .icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .ig .icon {
+        background: linear-gradient(135deg, var(--dasar), var(--opsional));
+      }
+      .tt .icon {
+        background: var(--opsional-deep);
+      }
+      .wa .icon {
+        background: linear-gradient(135deg, var(--pendukung), #9cc36b);
+      }
+      .web .icon {
+        background: var(--opsional);
+      }
+      .email .icon {
+        background: linear-gradient(135deg, var(--pendukung), var(--dasar));
+      }
+
+      .link .text {
+        flex: 1;
+        min-width: 0;
+      }
+      .link .title {
+        font-weight: 700;
+        font-size: 15px;
+      }
+      .link .desc {
+        font-size: 12.5px;
+        color: #6c8296;
+        margin-top: 1px;
+      }
+
+      .arrow {
+        color: #9fb6c9;
+        font-size: 18px;
+        flex-shrink: 0;
+      }
+
+      .map-card {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1.5px solid rgba(91, 126, 166, 0.18);
+        box-shadow: 0 1px 0 rgba(62, 90, 124, 0.04);
+        margin-bottom: 6px;
+      }
+
+      .map-card iframe {
+        width: 100%;
+        height: 190px;
+        display: block;
+        border: 0;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 36px;
+        font-size: 12px;
+        color: #8ba0b1;
+        line-height: 1.7;
+      }
+      footer b {
+        color: var(--opsional-deep);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="field-lines"></div>
+    <div class="wrap">
+      <div class="banner" id="banner">
+        <img src="img/tim.jpg" alt="Tim KKN Desa Pamulihan 03" onerror="document.getElementById('banner').style.display = 'none'" />
+      </div>
+
+      <div class="badge-row"><span class="badge">KKN · Universitas Muhammadiyah Bandung</span></div>
+
+      <div class="avatar" id="avatar">
+        <img
+          src="img/logokkn.jpeg"
+          alt="Logo KKN Desa Pamulihan 03"
+          onerror="
+            this.remove();
+            document.getElementById('avatar').textContent = '03';
+          "
+        />
+      </div>
+      <h1>KKN Desa Pamulihan<br />Kelompok 03</h1>
+      <p class="sub">Kenalan lebih dekat sama kami lewat tautan di bawah ini</p>
+
+      <div class="group-label">Media Sosial</div>
+
+      <a class="link ig" href="https://www.instagram.com/kknpamulihan3/" target="_blank">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="2" />
+            <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2" />
+            <circle cx="17.5" cy="6.5" r="1.2" fill="white" />
+          </svg>
+        </div>
+        <div class="text">
+          <div class="title">Instagram</div>
+          <div class="desc">Dokumentasi & update kegiatan harian</div>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="link tt" href="https://www.tiktok.com/@kknpamulihan3" target="_blank">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path d="M16.5 3c.3 2.3 1.8 3.9 4 4.1v2.6c-1.4 0-2.7-.4-3.9-1.2v6.3c0 3.1-2.5 5.6-5.6 5.6S5.4 17.9 5.4 14.8c0-3 2.3-5.4 5.3-5.6v2.7c-1.5.2-2.6 1.4-2.6 2.9 0 1.6 1.3 3 3 3s3-1.4 3-3V3h2.4z" />
+          </svg>
+        </div>
+        <div class="text">
+          <div class="title">TikTok</div>
+          <div class="desc">Konten kreatif seputar Desa Pamulihan</div>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <div class="group-label">Kontak & Website</div>
+
+      <a class="link wa" href="https://wa.me/6282240299681" target="_blank">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path
+              d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.7-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.8-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.7 2.6 4.1 3.6.6.2 1 .4 1.4.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2z"
+            />
+          </svg>
+        </div>
+        <div class="text">
+          <div class="title">WhatsApp Ketua Kelompok</div>
+          <div class="desc">Muhammad Fauzan Kamali — untuk koordinasi & informasi</div>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="link email" href="mailto:kknpamulihan03@gmail.com">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="5" width="18" height="14" rx="3" stroke="white" stroke-width="2" />
+            <path d="M4 7l8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="text">
+          <div class="title">Email Kelompok</div>
+          <div class="desc">kknpamulihan03@gmail.com</div>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a class="link web" href="https://kknpamulihan03.vercel.app/" target="_blank">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2" />
+            <path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9z" stroke="white" stroke-width="1.6" />
+          </svg>
+        </div>
+        <div class="text">
+          <div class="title">Website Kelompok KKN 03</div>
+          <div class="desc">Profil tim, galeri, dan dokumentasi kegiatan kami</div>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <div class="group-label">Lokasi</div>
+
+      <div class="map-card">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15844.544796320146!2d107.81727785091819!3d-6.874280035993837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68da594345995b%3A0x9e2887bdd54560dd!2sPamulihan%2C%20Kec.%20Pamulihan%2C%20Kabupaten%20Sumedang%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1786901896656!5m2!1sid!2sid"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+
+      <footer>
+        Dibuat oleh <b>KKN Desa Pamulihan 03</b><br />
+        Universitas Muhammadiyah Bandung · 2026
+      </footer>
+    </div>
+  </body>
+</html>
